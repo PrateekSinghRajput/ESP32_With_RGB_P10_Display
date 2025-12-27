@@ -17,22 +17,31 @@ P10 RGB LED panel (16x32, 1/6 scan)
 5V 5A external SMPS power supply
 HUB75 ribbon cable (16-pin)
 
+## 🔌 Pin Configuration
 
-## 🔌 Pin Connections
-R1_PIN  21
-G1_PIN  22
-B1_PIN   5
-R2_PIN   4
-G2_PIN  16
-B2_PIN  17
-A_PIN   23
-B_PIN   19
-C_PIN   18
-D_PIN   25
-E_PIN  -1
-LAT_PIN 27
-OE_PIN  14
-CLK_PIN 12
+**ESP32 + P10 RGB LED Matrix (HUB75) - 1/16 Scan**
+
+| P10 Pin | ESP32 GPIO | Function          | Description |
+|---------|------------|-------------------|-------------|
+| **R1**  | `GPIO21`   | **Red Data 1**    | Red color - Top half (rows 0-7) |
+| **G1**  | `GPIO22`   | **Green Data 1**  | Green color - Top half (rows 0-7) |
+| **B1**  | `GPIO5`    | **Blue Data 1**   | Blue color - Top half (rows 0-7) |
+| **R2**  | `GPIO4`    | **Red Data 2**    | Red color - Bottom half (rows 8-15) |
+| **G2**  | `GPIO16`   | **Green Data 2**  | Green color - Bottom half (rows 8-15) |
+| **B2**  | `GPIO17`   | **Blue Data 2**   | Blue color - Bottom half (rows 8-15) |
+|---------|------------|-------------------|-------------|
+| **A**   | `GPIO23`   | **Row Address A** | Row select bit 0 (2⁰) |
+| **B**   | `GPIO19`   | **Row Address B** | Row select bit 1 (2¹) |
+| **C**   | `GPIO18`   | **Row Address C** | Row select bit 2 (2²) |
+| **D**   | `GPIO25`   | **Row Address D** | Row select bit 3 (2³) |
+| **E**   | `-1`       | **Row Address E** | **Not used** (32x16 panel) |
+|---------|------------|-------------------|-------------|
+| **LAT** | `GPIO27`   | **Latch**         | Data latch (rising edge) |
+| **OE**  | `GPIO14`   | **Output Enable** | LED blanking (LOW=ON) |
+| **CLK** | `GPIO12`   | **Clock**         | Shift clock (rising edge) |
+| **GND** | `GND`      | **Ground**        | Common ground |
+| **+5V** | **External**| **Power**       | 5V 5A+ SMPS required |
+
 
 > **⚠️ Power Warning**: Connect P10 panel directly to 5V 5A external supply. ESP32 5V pin cannot power the display!
 
