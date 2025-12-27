@@ -34,7 +34,7 @@ HUB75 ribbon cable (16-pin)
 | **B**   | `GPIO19`   | **Row Address B** | Row select bit 1 (2¹) |
 | **C**   | `GPIO18`   | **Row Address C** | Row select bit 2 (2²) |
 | **D**   | `GPIO25`   | **Row Address D** | Row select bit 3 (2³) |
-| **E**   | `-1`       | **Row Address E** | **Not used** (32x16 panel) |
+| **E**   | `-1`       | **Row Address E** | **Not used** (16x32 panel) |
 |---------|------------|-------------------|-------------|
 | **LAT** | `GPIO27`   | **Latch**         | Data latch (rising edge) |
 | **OE**  | `GPIO14`   | **Output Enable** | LED blanking (LOW=ON) |
